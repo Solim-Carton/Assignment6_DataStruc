@@ -1,0 +1,14 @@
+Design Memo
+
+Recursive insertion works by treating every node as the root of its own smaller tree.
+When insertion is called it sets the current node to the root if none was passed in. 
+If the current nodes name matches the manager name the method checks whether the requested side is open. 
+If its open, is creates a new employeenode. If the name doesnt match the method calls itself to the left and then right,
+It searches one level at t time until it finds the manager or runs out of nodes. It uses true or false to tell the user if the manager was found.
+
+The hardest part was finding the right spot without breaking the search. My first version attached the elif and else to the name check insead of the side check,
+so the method returned before it ever searched the subtrees. I misplaced a return in the empty tree check caused problems with the insert.
+Error messages also gave me some issues as they were running after every line. I was ajusted it to print at the sop of the search and using found_left/right solved this.
+
+Trees are prefered when data is hierarchical and when fast searching matters. File systems, org charts , and routing tables hide the hierarchical relationships.
+A balanced tree would allow for faster lookup, insertion, and deletion than a plain list.
